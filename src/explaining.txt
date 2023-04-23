@@ -1,0 +1,133 @@
+----------------------------------------------components=---------------------------------------------------------
+Props: Are like the arguments passed In a component and it represent the information of what we want to pass in that component 
+     ;;>>props can be passed as ..a variable or a function
+
+
+-------------------------------CSS--------------------------------------
+for the Css file named  {name.module.css} it make the file of the Css into Css module stylesheet
+   for Css Module stylesheet:
+   ---------------------------
+   ==>the way it is imported :  ----->>>>> import styles from"./filename.module.css";
+   ==>The way classes are like provided :-------->>>>>>>> {styles.name_of_the_class}
+
+
+???????????Note Thatv for the in line styling Things Are written in an object  ----> style= {{}}
+
+-----------------------------Lists------------------------------------
+    For displaying tyhe elements in the list we use the "map" keyword seeee in te written codes
+                                   ==!!>Note that the map method need a call back function
+                                             :::>>1ST ARG:value(representing the values in a givjen list) alson know that value can named any name you like but take that the logic is the same
+                                             ::::>>2ND ARG:key(you know normal indexes ex:[1],[2])
+-----------------------Ternally Operators----------------------------------------------------
+===> && : this operator works like "if something then do this" but no else in available
+
+-----------------------------State and UseStateHooks------------------------------------------------------------------
+       ===>-------------OnChange event--------------------------------
+
+The "onChange" event allows you to detect when the value of a form element has changed and take action accordingly. For example, you can use the "onChange" event to capture user input in a form field and update the state or perform some other action based on the new value.
+
+Here's an example of how you might use the "onChange" event with an input field in a React functional component:
+
+jsx
+Copy code
+import React, { useState } from 'react';
+
+const MyForm = () => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setInputValue(value);
+  }
+
+  return (
+    <form>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+      /> 
+      <p>Input value: {inputValue}</p>
+    </form>
+  );
+}
+
+export default MyForm;
+In this example, the "onChange" event is used with an input field to capture user input. When the input value changes, the "handleInputChange" function is called, which updates the state with the new value.
+ The updated value is then displayed in a paragraph element below the input field.
+
+------------------------------------------------------USE EFFECT HOOK------------------------------------------------------------------------
+the are three Staes of a Component in react :-->Mounting:means the rendering of the Component in the screen 
+                                             -->Updating:Chaning of the Component
+                                             -->UnMounting:is the inverse of the Mounting
+---------------------------------------------------------------------------------------------------------------------------------------------
+ ex:(1)      ----***?**-----
+      <h1>Age:{PredictedValue?.age}</h1>
+      ----> the question mark that you are seing like in the given example : means trying to get the value of age while the variable is null.
+       ---->data?.fact is called optional chaining. It is a way to access properties of an object without causing an error if the object is null or undefined.
+
+(2)
+import {BrowserRouter as Router,Routes,Route } from 'react';
+  
+   --->Router:: specifies where exactly in our app we want to have our routes 
+   --->Route::specifies what route we want to have in our app
+(3)
+  <Route path='/' element={}/>
+   --->element:: is just an elemnt that will be rendered when you go to this route
+
+------------------------------Create component------------------------------------------------------
+createContext is a method in the React library that is used to create a new context object. Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+When you create a context using createContext, it returns a provider and a consumer. The provider is used to wrap the part of the component tree that needs access to the context,
+ and the consumer is used to access the data passed through the context from within a child component.
+               ------------------Use Contxt--------------------------------
+               It is used to use the contxt.
+
+--------------------------QUERY CLIENT-------------------------------------
+===>
+The QueryClient is a class provided by the @tanstack/react library that helps in managing and caching data fetching operations for React applications. It is used in combination with other hooks and components provided by the library such as useQuery and QueryClientProvider to simplify data fetching and management.
+
+The QueryClient instance can be used to cache data fetched from an API, and it can also be used to perform background fetching of data so that the data is always up-to-date. It provides a simple API for managing queries, mutations, and subscriptions to data changes.
+
+Some of the benefits of using QueryClient include:
+
+Caching: The QueryClient caches data fetched from APIs, which can help reduce network traffic and improve app performance.
+
+Data management: QueryClient provides a simple API for managing data fetched from APIs, making it easier to keep track of data across your application.
+Error handling: QueryClient provides a way to handle errors that occur during data fetching, making it easier to handle error states in your application.
+
+Real-time updates: QueryClient supports real-time updates through subscriptions, which allows you to keep your data in sync with your API.
+                  ------Ue Query -------------
+         It take 2 Arguments: 
+          1st array : containing the id 
+          2nd  function : for fetching from the API
+
+EX:"     const { data } = useQuery(["cat"],()=>{
+        Axios.get("https://catfact.ninja/fact").then((res)=>{res.data})
+     })"
+    Eplanaition: the data in the carley braces represent the information got from the Api 
+==>
+defaultOptions: thisis used to set default values used by QueryClient.
+================    
+---------------------------------CREATING MY OWN HOOK---------------------------------------
+For the REturn Value we can use :
+(1)[] : when we use these when we have imported the hook into some where the values exported in the hook inside [] ,
+        can be named differently
+(2){} : while here the values exported  from the hook in thse {} else where theye are imported they must have same name as they had when beong exported
+
+---------------------------------Prop type ---------------------------------------------------------
+
+ it is used to notify you errors when a component element had being passed a wrong value,
+      ex: when a component had a prop of name and in the name of you pass a value of number.
+
+
+
+
+
+
+
+
+
+
+
+
