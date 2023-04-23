@@ -1,10 +1,9 @@
 export const ProductAvl =()=>{
+    const products = ["TomATO","potato","fish","cocoa"]
     return (
         <div>
-            <h1>We have: </h1>
-            <h2>Tomato</h2>
-            <h2>cocoa</h2>
-            <h2>vine</h2>
+            {products.map((food)=>{ return (<h1>{food}</h1>)
+            })}
         </div>
     )
 }
